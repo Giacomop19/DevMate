@@ -27,10 +27,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1f0883c2-e282-4ac8-97cc-174a721a0a79">
-      <console name="DevMate" type="STANDARD" schema="public" session="Main"><![CDATA[CREATE TRIGGER trigger_update_last_modified_date
-BEFORE UPDATE ON "user"
-FOR EACH ROW EXECUTE FUNCTION update_last_modified_date();
-COMMIT;]]></console>
+      <console name="DevMate" type="STANDARD" schema="public" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
