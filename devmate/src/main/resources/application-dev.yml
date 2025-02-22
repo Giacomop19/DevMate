@@ -5,26 +5,12 @@ spring:
     password: devmate1
     driver-class-name: org.postgresql.Driver
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
-    show-sql: false
-    properties:
-      hibernate:
-        format-sql: true
-    database: postgresql
-    database-platform: org.hibernate.dialect.PostgresSQLDialect
-  mail:
-    host: localhost
-    port: 1025
-    username: devmate
-    password: devmate
-    properties:
-      mail:
-        smtp:
-          trust: "*"
-        auth: true
-        starttls:
-          enable: true
-        connectiontimeout: 5000
-        timeout: 3000
-        writetimeout: 5000
+    show-sql: true
+  sql:
+    init:
+      mode: always
+  server:
+    port: 8080
