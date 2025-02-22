@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/devmate_db
-    username: username
-    password: password
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: devmate1
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -12,7 +12,7 @@ spring:
       hibernate:
         format-sql: true
     database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSLDialect
+    database-platform: org.hibernate.dialect.PostgresSQLDialect
   mail:
     host: localhost
     port: 1025
