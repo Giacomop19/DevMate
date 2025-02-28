@@ -40,6 +40,12 @@
     <connection id="1f0883c2-e282-4ac8-97cc-174a721a0a79" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="1f0883c2-e282-4ac8-97cc-174a721a0a79" dataset="public.role" active-filter-id="e2761f91-cccd-442c-bc18-b8426c152646">
+      <filter id="e2761f91-cccd-442c-bc18-b8426c152646" name="Filter" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="1f0883c2-e282-4ac8-97cc-174a721a0a79" dataset="public.user_roles" active-filter-id="" />
     <filter-actions connection-id="1f0883c2-e282-4ac8-97cc-174a721a0a79" dataset="public.user" active-filter-id="65b837bc-87b1-400c-89ec-47fd08cb14f5">
       <filter id="65b837bc-87b1-400c-89ec-47fd08cb14f5" name="Filter" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="id" operator="=" value="" active="true" />
