@@ -6,8 +6,11 @@ spring:
       max-file-size: 50MB
 springdoc:
   default-produces-media-type: application/json
-
 server:
   servlet:
     context-path: /api/v1/
+devmate:
+  prop:
+    key: mindyabusiness-devmate-doyathang
+    jwtExpiration: 86400000
 
