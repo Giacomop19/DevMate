@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class UserDetailsService implements UserDetails {
+public class UserDetailsSrv implements UserDetails {
 
     private Long id;
     private String username;
@@ -19,8 +19,8 @@ public class UserDetailsService implements UserDetails {
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
     //constructor
-    public UserDetailsService(Long id, String username, String email, String password,
-                              Collection<? extends GrantedAuthority> authorities){
+    public UserDetailsSrv(Long id, String username, String email, String password,
+                          Collection<? extends GrantedAuthority> authorities){
         this.id = id;
         this.username = username;
         this.email = email;
@@ -28,11 +28,11 @@ public class UserDetailsService implements UserDetails {
         this.authorities = authorities;
     }
 
-    public UserDetailsService build(User user){
+    public static UserDetailsSrv build(User user){
         List<GrantedAuthority> authorities = user.getRoles().stream()
                 .map(role -> new SimpleGrantedAuthority(role.getName()))
                 .collect(Collectors.toUnmodifiableList());
-        return new UserDetailsService(
+        return new UserDetailsSrv(
                 user.getId(),
                 user.getUsername(),
                 user.getEmail(),

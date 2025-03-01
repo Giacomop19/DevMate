@@ -1,6 +1,6 @@
 package com.onelife.devmate.util;
 
-import com.onelife.devmate.service.UserDetailsService;
+import com.onelife.devmate.service.UserDetailsSrv;
 import io.jsonwebtoken.security.Keys;
 import io.jsonwebtoken.security.SignatureException;
 
@@ -50,7 +50,7 @@ public class JwtUtil {
     //private int jwtExpirationMs;
 
     public String generateJwtToken(Authentication authentication){
-        UserDetailsService userPrincipal = (UserDetailsService) authentication.getPrincipal();
+        UserDetailsSrv userPrincipal = (UserDetailsSrv) authentication.getPrincipal();
         return Jwts.builder().subject((userPrincipal.getUsername()))
                 .issuedAt(new Date())
                 .expiration(new Date((new Date()).getTime() + jwtExpirationMs))
