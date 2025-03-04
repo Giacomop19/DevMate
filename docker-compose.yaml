@@ -1,6 +1,5 @@
 services:
   devmate-be:
-    image: devmate
     build:
       context: devmate/.
       dockerfile: Dockerfile
@@ -9,7 +8,7 @@ services:
     depends_on:
       - postgres
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/postgres
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: devmate1
   postgres:
@@ -20,3 +19,8 @@ services:
     environment:
       - 'POSTGRES_USER=postgres'
       - 'POSTGRES_HOST_AUTH_METHOD=trust'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
+
