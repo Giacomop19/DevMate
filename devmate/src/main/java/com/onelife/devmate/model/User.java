@@ -1,13 +1,25 @@
 package com.onelife.devmate.model;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
+import java.security.Principal;
 import java.time.LocalDateTime;
+import java.util.Collection;
 import java.util.List;
 import java.time.LocalDate;
+import java.util.stream.Collectors;
 
 @Entity
-@Table(name = "user")
-public class User {
+@SuperBuilder
+@Getter
+@Setter
+@Table(name = "user" , schema = "public")
+public class User implements UserDetails, Principal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,6 +49,13 @@ public class User {
 
     @Column(insertable = false)
     private LocalDateTime lastModifiedDate;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return this.roles
+                .stream()
+                .map(r -> new SimpleGrantedAuthority(r.getName()))
+                .collect(Collectors.toList());
+    }
 
     public Long getId() {
         return id;
@@ -132,4 +151,7 @@ public class User {
     public void setUsername(String username){
         this.username = username;
     }
+
+    @Override
+    public String getName(){return username;}
 }

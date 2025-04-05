@@ -1,6 +1,5 @@
 package com.onelife.devmate.util;
 
-import com.onelife.devmate.service.UserDetailsSrv;
 import io.jsonwebtoken.security.Keys;
 import io.jsonwebtoken.security.SignatureException;
 
@@ -8,8 +7,9 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.log4j.*;
 import io.jsonwebtoken.*;
 
 import javax.crypto.SecretKey;
@@ -46,11 +46,8 @@ public class JwtUtil {
 
     }
 
-    //@Value("${devmate.prop.jwtExpirationMs}")
-    //private int jwtExpirationMs;
-
     public String generateJwtToken(Authentication authentication){
-        UserDetailsSrv userPrincipal = (UserDetailsSrv) authentication.getPrincipal();
+        UserDetails userPrincipal = (UserDetails) authentication.getPrincipal();
         return Jwts.builder().subject((userPrincipal.getUsername()))
                 .issuedAt(new Date())
                 .expiration(new Date((new Date()).getTime() + jwtExpirationMs))
