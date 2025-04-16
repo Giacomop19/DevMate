@@ -16,5 +16,5 @@ spring:
     port: 8080
 devmate:
   prop:
-    key: mindyabusiness-devmate-doyathang
+    key: mindyabusiness-devmate-doyathang-mysecretkey-you-wont-know-nothing
     jwtExpiration: 86400000
