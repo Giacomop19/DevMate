@@ -17,9 +17,14 @@ spring:
     port: 8080
 devmate:
   prop:
+<<<<<<< HEAD
     key: mindyabusiness-devmate-doyathang
     jwtExpiration: 86400000
 logging:
   level:
     org.springframework.web: DEBUG
     org.springframework.security: DEBUG
+=======
+    key: mindyabusiness-devmate-doyathang-mysecretkey-you-wont-know-nothing
+    jwtExpiration: 86400000
+>>>>>>> add-kotlin-main
