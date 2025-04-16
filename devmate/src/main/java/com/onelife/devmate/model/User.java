@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 @SuperBuilder
 @Getter
 @Setter
-@Table(name = "user" , schema = "public")
+@Table(name = "\"user\"" , schema = "public")
 public class User implements UserDetails, Principal {
 
     @Id
