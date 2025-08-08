@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.onelife</groupId>
-	<artifactId>devmate</artifactId>
+	<artifactId>devmate-user-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>devmate</name>
 	<description>DevMate project</description>
@@ -91,7 +91,6 @@
 			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<finalName>devmate-1.0</finalName>
 		<plugins>

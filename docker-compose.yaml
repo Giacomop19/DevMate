@@ -1,7 +1,7 @@
 services:
   devmate-be:
     build:
-      context: devmate/.
+      context: devmate-user-service/.
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
@@ -10,10 +10,10 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
       SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: devmate1
+      SPRING_DATASOURCE_PASSWORD: devmate
   postgres:
     image: 'postgres'
-    container_name: 'DevMateDB'
+    container_name: 'devmate-db'
     ports:
       - 5432:5432
     environment:
